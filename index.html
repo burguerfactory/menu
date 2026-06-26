@@ -1,0 +1,1976 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Burger Factory</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="img/favicon-32x32.webp">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="container navbar">
+
+        <a href="#top">
+            <img src="img/logo.webp" class="logo" alt="Logo">
+        </a>
+
+    <div class="cart" id="openCart">
+
+        <span class="cart-icon">
+            🛒
+        </span>
+
+        <span class="cart-text">
+            PEDIDO
+        </span>
+
+        <span id="cartCount">
+            0
+        </span>
+
+    </div>
+
+
+    </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <h1>
+
+                <span class="warning">
+                    ADVERTENCIA
+                </span>
+
+                <span class="headline">
+                    PUEDE GENERAR
+                </span>
+
+                <span class="accent">
+                    ANTOJO.
+                </span>
+
+            </h1>
+
+            <div class="hero-actions">
+
+                <a href="#burgers" class="btn-primary">
+                    VER MENÚ
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-burger">
+
+            <img src="img/burger.webp" alt="Hamburguesa">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FILTROS MENU
+========================= -->
+
+<div class="menu-filters container">
+
+    <button class="filter active" data-filter="burgers">
+        <span>HAMBURGUESAS</span>
+    </button>
+
+    <button class="filter" data-filter="papas">
+        <span>PAPAS</span>
+    </button>
+
+    <button class="filter" data-filter="bebidas">
+        <span>BEBIDAS</span>
+    </button>
+
+</div>
+
+
+<!-- =========================
+     HAMBURGUESAS
+========================= -->
+
+
+<section id="burgers" class="menu-section categoria burgers active">
+
+<div class="container">
+
+<h2>
+NUESTRAS BURGERS
+</h2>
+
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/1.webp"
+loading="lazy"
+alt="American Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+AMERICAN FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE + 
+DOBLE MEDALLÓN +
+CHEDDAR + PANCETA + 
+CEBOLLA + LECHUGA + 
+TOMATE + SALSA ESPECIAL.
+</p>
+
+
+<div class="price">
+$15.500
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="AMERICAN FACTORY"
+data-precio="15500">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/2.webp"
+loading="lazy"
+alt="Bacon Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+BACON FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE + 
+DOBLE MEDALLÓN + 
+CHEDDAR + PANCETA + 
+SALSA ESPECIAL.
+</p>
+
+
+<div class="price">
+$15.500
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="BACON FACTORY"
+data-precio="15500">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/3.webp"
+loading="lazy"
+alt="Big Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+BIG FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE +
+DOBLE MEDALLÓN +
+CHEDDAR + LECHUGA + 
+CEBOLLA + SALSA ESPECIAL +
+PEPINILLOS.
+</p>
+
+
+<div class="price">
+$15.500
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="BIG FACTORY"
+data-precio="15500">
+
+AGREGAR
+
+</button>
+
+</div>
+
+
+</div>
+
+</article>
+
+
+<!-- COPIÁ ESTE MISMO FORMATO PARA LAS RESTANTES -->
+
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/4.webp"
+loading="lazy"
+alt="Blue Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+BLUE FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE + 
+DOBLE MEDALLÓN + 
+CEBOLLA CARAMELIZADA + 
+RÚCULA + QUESO ROQUEFORT + 
+SALSA ESPECIAL.
+</p>
+
+
+<div class="price">
+$15.500
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="BLUE FACTORY"
+data-precio="15500">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/5.webp"
+loading="lazy"
+alt="Cheese Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+CHEESE FACTORY
+</h3>
+
+<p>
+Doble carne.
+Bacon crocante.
+Cheddar americano.
+</p>
+
+
+<div class="price">
+$14.000
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="CHEESE FACTORY"
+data-precio="14000">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/6.webp"
+loading="lazy"
+alt="Crispy Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+CRISPY FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE +
+DOBLE MEDALLÓN + 
+CHEDDAR + 
+CEBOLLA CRISPY +
+PANCETA + 
+SALSA ESPECIAL.
+</p>
+
+
+<div class="price">
+$15.500
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="CRISPY FACTORY"
+data-precio="15500">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/7.webp"
+loading="lazy"
+alt="Libra Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+LIBRA FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE + 
+DOBLE MEDALLÓN +
+CHEDDAR + 
+SALSA CUARTO DE LIBRA +
+CEBOLLA PICADA + 
+KETCHUP + MOSTAZA.
+</p>
+
+
+<div class="price">
+$14.000
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="LIBRA FACTORY"
+data-precio="14000">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/8.webp"
+loading="lazy"
+alt="Fried Onion Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+FRIED ONION FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE + 
+DOBLE MEDALLÓN CON CEBOLLA SMASHADA + 
+CHEDDAR + SALSA ESPECIAL.
+</p>
+
+
+<div class="price">
+$15.500
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="FRIED ONION FACTORY"
+data-precio="15500">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/9.webp"
+loading="lazy"
+alt="Scaloneta Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+SCALONETA FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE + 
+DOBLE MEDALLÓN + 
+QUESO PROVOLONE + 
+SALSA CRIOLLA + MAYO CHIMI.
+</p>
+
+
+<div class="price">
+$15.500
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="SCALONETA FACTORY"
+data-precio="15500">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/14.webp"
+loading="lazy"
+alt="Stranger Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+STRANGER FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE + 
+DOBLE MEDALLÓN + 
+AROS DE CEBOLLA + QUESO CHEDDAR + 
+PANCETA + 
+SALSA ESPECIAL BACON.
+</p>
+
+
+<div class="price">
+$15.500
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="STRANGER FACTORY"
+data-precio="15500">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/10.webp"
+loading="lazy"
+alt="Triple Bacon Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+TRIPLE BACON FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE + 
+TRIPLE MEDALLÓN +
+CHEDDAR + 
+PANCETA + 
+SALSA ESPECIAL.
+</p>
+
+
+<div class="price">
+$18.000
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="TRIPLE BACON FACTORY"
+data-precio="18000">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/11.webp"
+loading="lazy"
+alt="Triple Cheese Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+TRIPLE CHEESE FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE + 
+TRIPLE MEDALLÓN + 
+EXTRA FETAS DE CHEDDAR + 
+SALSA ESPECIAL.
+</p>
+
+
+<div class="price">
+$14.000
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="TRIPLE CHEESE FACTORY"
+data-precio="14000">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<article class="product">
+
+<div class="product-image">
+
+<img 
+src="img/12.webp"
+loading="lazy"
+alt="Veggie Factory">
+
+</div>
+
+
+<div class="product-content">
+
+<h3>
+VEGGIE FACTORY
+</h3>
+
+<p>
+PAN BRIOCHE +
+DOBLE MEDALLÓN NOT CO (HECHO A BASE DE PLANTAS) +
+CHEDDAR +
+CEBOLLA CRISPY +
+LECHUGA + TOMATE + 
+SALSA ESPECIAL.
+
+</p>
+
+
+<div class="price">
+$18.000
+</div>
+
+
+<div class="buttons">
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="VEGGIE FACTORY"
+data-precio="18000">
+
+AGREGAR
+
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- =========================
+     PAPAS
+========================= -->
+
+
+<section 
+class="menu-section categoria papas">
+
+
+<div class="container">
+
+
+<h2>
+PAPAS FRITAS
+</h2>
+
+
+
+<article class="product">
+
+
+<div class="product-image">
+
+<img 
+src="img/cono.webp"
+loading="lazy"
+alt="Cono Extra">
+
+</div>
+
+
+
+<div class="product-content">
+
+
+<h3>
+CONO EXTRA
+</h3>
+
+
+<p>
+PAPAS CON CHEDDAR Y PANCETA.
+</p>
+
+
+<div class="price">
+
+$5.000
+
+</div>
+
+
+
+<div class="buttons">
+
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="CONO EXTRA"
+data-precio="5000">
+
+
+AGREGAR
+
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</article>
+
+
+
+
+
+<article class="product">
+
+
+<div class="product-image">
+
+<img 
+src="img/cheddar.webp"
+loading="lazy"
+alt="Papas Factory">
+
+</div>
+
+
+
+<div class="product-content">
+
+
+<h3>
+PAPAS FACTORY
+</h3>
+
+
+<p>
+Papas con cheddar y salsa especial.
+</p>
+
+
+<div class="price">
+
+$10.000
+
+</div>
+
+
+
+<div class="buttons">
+
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="PAPAS FACTORY"
+data-precio="10000">
+
+
+AGREGAR
+
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</article>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- =========================
+     BEBIDAS
+========================= -->
+
+
+<section 
+class="menu-section categoria bebidas">
+
+
+<div class="container">
+
+
+<h2>
+BEBIDAS
+</h2>
+
+
+
+
+<article class="product">
+
+
+<div class="product-image">
+
+
+<img 
+src="img/220.webp"
+loading="lazy"
+alt="Coca Cola 220ml">
+
+
+</div>
+
+
+
+<div class="product-content">
+
+
+<h3>
+
+COCA COLA 220ml ORIGINAL
+
+</h3>
+
+<div class="price">
+
+$1.000
+
+</div>
+
+
+
+<div class="buttons">
+
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="COCA COLA 220ml ORIGINAL / ZERO"
+data-precio="1000">
+
+
+AGREGAR
+
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</article>
+
+<article class="product">
+
+
+<div class="product-image">
+
+
+<img 
+src="img/220z.webp"
+loading="lazy"
+alt="Coca Cola 220ml">
+
+
+</div>
+
+
+
+<div class="product-content">
+
+
+<h3>
+
+COCA COLA 220ml ZERO
+
+</h3>
+
+<div class="price">
+
+$1.000
+
+</div>
+
+
+
+<div class="buttons">
+
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="COCA COLA 220ml ZERO"
+data-precio="1000">
+
+
+AGREGAR
+
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</article>
+
+
+
+
+
+<article class="product">
+
+
+<div class="product-image">
+
+
+<img 
+src="img/600.webp"
+loading="lazy"
+alt="Coca Cola 600ml">
+
+
+</div>
+
+
+
+<div class="product-content">
+
+
+<h3>
+
+COCA COLA 600ml ORIGINAL
+
+</h3>
+
+
+<div class="price">
+
+$2.000
+
+</div>
+
+
+
+<div class="buttons">
+
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="COCA COLA 600ml ORIGINAL / ZERO"
+data-precio="1000">
+
+
+AGREGAR
+
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</article>
+
+
+<article class="product">
+
+
+<div class="product-image">
+
+
+<img 
+src="img/600z.webp"
+loading="lazy"
+alt="Coca Cola 600ml">
+
+
+</div>
+
+
+
+<div class="product-content">
+
+
+<h3>
+
+COCA COLA 600ml ZERO
+
+</h3>
+
+
+<div class="price">
+
+$2.000
+
+</div>
+
+
+
+<div class="buttons">
+
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="COCA COLA 600ml ZERO"
+data-precio="1000">
+
+
+AGREGAR
+
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</article>
+
+
+
+<article class="product">
+
+
+<div class="product-image">
+
+
+<img 
+src="img/1lt.webp"
+loading="lazy"
+alt="Coca Cola 1L">
+
+
+</div>
+
+
+
+<div class="product-content">
+
+
+<h3>
+
+COCA COLA 1L
+
+</h3>
+
+
+<div class="price">
+
+$3.500
+
+</div>
+
+
+
+<div class="buttons">
+
+
+<button
+class="btn-orange btn-agregar"
+data-nombre="COCA COLA 1L"
+data-precio="3500">
+
+
+AGREGAR
+
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+</article>
+
+
+
+
+</div>
+
+
+</section>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<div class="cart-drawer" id="cartDrawer">
+
+
+    <div class="cart-header">
+
+        <h3>
+            MI PEDIDO
+        </h3>
+
+        <button id="closeCart">
+            ✕
+        </button>
+
+    </div>
+
+
+
+
+    <!-- PRODUCTOS SCROLL -->
+
+    <div class="cart-scroll">
+
+
+        <div id="cartItems"></div>
+
+
+
+        <div class="cart-total">
+
+            TOTAL
+
+            <span id="cartTotal">
+                $0
+            </span>
+
+        </div>
+
+
+
+        <button
+        class="btn-clear-cart"
+        onclick="limpiarCarrito()">
+
+        🗑 LIMPIAR CARRITO
+
+        </button>
+
+
+    </div>
+
+
+
+
+
+    <!-- FORMULARIO FIJO -->
+
+    <div class="cart-form">
+
+
+        <input
+        type="text"
+        id="cliente"
+        placeholder="Nombre"
+        required
+        minlength="3"
+        maxlength="40">
+
+
+
+        <select id="pago">
+
+            <option>
+            Efectivo
+            </option>
+            
+            <option>
+            Mercado Pago
+            </option>
+
+        </select>
+
+
+
+
+        <select id="entrega">
+
+
+            <option>
+            Retira en local
+            </option>
+
+
+            <option>
+            Envío
+            </option>
+
+
+        </select>
+
+
+
+
+        <div id="direccionBox">
+
+
+            <input
+            type="text"
+            id="direccion"
+            placeholder="Dirección">
+
+
+        </div>
+
+
+
+
+
+        <div class="obs-box">
+
+
+            <label for="observaciones">
+
+            📝 Observaciones del pedido
+
+            </label>
+
+    <textarea id="observaciones" rows="3" maxlength="250" placeholder="Ej: sin cebolla, carne bien cocida..."></textarea>
+
+        </div>
+
+
+
+
+
+        <button
+
+        class="btn-orange send-order"
+
+        onclick="enviarPedido()">
+
+
+        FINALIZAR PEDIDO
+
+
+        </button>
+
+
+
+    </div>
+
+
+</div>
+
+
+<button id="btnTop" aria-label="Volver arriba">
+    <i class="fa-solid fa-chevron-up">⬆</i>
+</button>
+
+<script>
+
+document.charset = "UTF-8";
+
+const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+function guardarCarrito(){
+
+    localStorage.setItem(
+        'carrito',
+        JSON.stringify(carrito)
+    );
+
+}
+
+function renderCarrito(){
+
+    let html = '';
+    let total = 0;
+
+    carrito.forEach((item,index)=>{
+
+        total += item.precio * item.cantidad;
+
+        html += `
+        <div class="cart-item">
+
+            <div>
+
+                <strong>${item.nombre}</strong>
+
+                <br>
+
+                <span class="cart-qty">
+                    ${item.cantidad}x
+                </span>
+
+                <span class="cart-price">
+                    $${item.precio.toLocaleString()}
+                </span>
+
+            </div>
+
+            <div class="cart-actions">
+
+                <button
+                    class="qty-btn"
+                    onclick="restar(${index})">
+                    -
+                </button>
+
+                ${item.cantidad}
+
+                <button
+                    class="qty-btn"
+                    onclick="sumar(${index})">
+                    +
+                </button>
+
+            </div>
+
+        </div>
+        `;
+
+    });
+
+    document.getElementById('cartItems').innerHTML = html;
+
+    document.getElementById('cartTotal').innerHTML =
+        '$' + total.toLocaleString();
+
+    document.getElementById('cartCount').innerHTML =
+        carrito.reduce(
+            (a,b)=>a+b.cantidad,
+            0
+        );
+
+}
+
+function sumar(i){
+
+    carrito[i].cantidad++;
+
+    guardarCarrito();
+    renderCarrito();
+
+}
+
+function restar(i){
+
+    carrito[i].cantidad--;
+
+    if(carrito[i].cantidad <= 0){
+
+        carrito.splice(i,1);
+
+    }
+
+    guardarCarrito();
+    renderCarrito();
+
+}
+
+function mostrarToast(texto){
+
+
+const toast = document.createElement("div");
+
+
+toast.className="toast";
+
+
+toast.innerHTML = texto;
+
+
+document.body.appendChild(toast);
+
+
+
+setTimeout(()=>{
+
+toast.classList.add("show");
+
+},100);
+
+
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+
+setTimeout(()=>{
+
+toast.remove();
+
+},300);
+
+
+},2500);
+
+
+}
+
+document.querySelectorAll('.btn-agregar').forEach(btn=>{
+
+    btn.addEventListener('click',()=>{
+
+
+        const nombre = btn.dataset.nombre;
+
+        const precio = parseInt(btn.dataset.precio);
+
+
+
+        const existe =
+            carrito.find(
+                p => p.nombre === nombre
+            );
+
+
+
+        if(existe){
+
+
+            existe.cantidad++;
+
+
+        }else{
+
+
+            carrito.push({
+
+                nombre,
+
+                precio,
+
+                cantidad:1
+
+            });
+
+
+        }
+
+
+
+        guardarCarrito();
+
+        renderCarrito();
+
+
+
+        // ALERTA PRODUCTO AGREGADO
+
+        mostrarToast(
+            "🍔 " + nombre + " SE AGREGO"
+        );
+
+
+    });
+
+});
+
+document.querySelectorAll('.btn-wsp').forEach(btn=>{
+
+    btn.addEventListener('click',()=>{
+
+        const nombre =
+            btn.dataset.nombre;
+
+        const numero =
+            '5493705056785';
+
+        const texto =
+            encodeURIComponent(
+                'Hola, quiero pedir: ' +
+                nombre
+            );
+
+        window.open(
+            'https://wa.me/' +
+            numero +
+            '?text=' +
+            texto,
+            '_blank'
+        );
+
+    });
+
+});
+
+document
+.getElementById('openCart')
+.addEventListener('click',()=>{
+
+    document
+    .getElementById('cartDrawer')
+    .classList.add('active');
+
+    document
+    .getElementById('cartOverlay')
+    .classList.add('active');
+
+});
+
+document
+.getElementById('closeCart')
+.addEventListener('click',cerrarCarrito);
+
+document
+.getElementById('cartOverlay')
+.addEventListener('click',cerrarCarrito);
+
+function cerrarCarrito(){
+
+    document
+    .getElementById('cartDrawer')
+    .classList.remove('active');
+
+    document
+    .getElementById('cartOverlay')
+    .classList.remove('active');
+
+}
+
+function limpiarCarrito(){
+
+    if(!confirm('¿Vaciar todo el carrito?')){
+        return;
+    }
+
+    carrito.length = 0;
+
+    guardarCarrito();
+    renderCarrito();
+
+}
+
+const entregaSelect =
+    document.getElementById('entrega');
+
+const direccionBox =
+    document.getElementById('direccionBox');
+
+function toggleDireccion(){
+
+    if(entregaSelect.value === 'Envío'){
+
+        direccionBox.style.display = 'block';
+
+    }else{
+
+        direccionBox.style.display = 'none';
+
+        document.getElementById('direccion').value = '';
+
+    }
+
+}
+
+entregaSelect.addEventListener(
+    'change',
+    toggleDireccion
+);
+
+const emojis = {
+    burger: String.fromCodePoint(0x1F354),
+    user: String.fromCodePoint(0x1F464),
+    money: String.fromCodePoint(0x1F4B0),
+    card: String.fromCodePoint(0x1F4B3),
+    truck: String.fromCodePoint(0x1F69A),
+    list: String.fromCodePoint(0x1F4CB),
+    item: String.fromCodePoint(0x1F539),
+    note: String.fromCodePoint(0x1F4DD),
+    location: String.fromCodePoint(0x1F4CD)
+};
+
+function enviarPedido(){
+
+    if(carrito.length === 0){
+
+        alert('El carrito está vacío');
+        return;
+
+    }
+
+    const cliente =
+        document.getElementById('cliente').value.trim();
+
+    const pago =
+        document.getElementById('pago').value;
+
+    const entrega =
+        document.getElementById('entrega').value;
+
+    const direccion =
+        document.getElementById('direccion').value.trim();
+
+    const observaciones =
+        document.getElementById('observaciones').value.trim();
+
+    if(cliente.length < 3){
+
+        alert('Ingresá un nombre válido.');
+
+        document
+        .getElementById('cliente')
+        .focus();
+
+        return;
+
+    }
+
+    if(
+        entrega === 'Envío' &&
+        direccion.length < 5
+    ){
+
+        alert('Ingresá una dirección válida.');
+
+        document
+        .getElementById('direccion')
+        .focus();
+
+        return;
+
+    }
+
+    if(observaciones.length > 250){
+
+        alert(
+            'Las observaciones no pueden superar los 250 caracteres.'
+        );
+
+        document
+        .getElementById('observaciones')
+        .focus();
+
+        return;
+
+    }
+
+    let total = 0;
+
+function emoji(codigo){
+    return String.fromCodePoint(codigo);
+}
+
+
+let mensaje = 
+emoji(0x1F354) + " *BURGER FACTORY*\n\n" +
+emoji(0x1F464) + " Cliente: " + cliente + "\n" +
+emoji(0x1F4B3) + " Pago: " + pago + "\n" +
+emoji(0x1F69A) + " Entrega: " + entrega + "\n";
+
+
+if (entrega === 'Envío') {
+
+    mensaje += emoji(0x1F4CD) + 
+    " Dirección: " + direccion + "\n";
+
+}
+
+
+if (observaciones !== '') {
+
+    mensaje += emoji(0x1F4DD) + 
+    " Observaciones: " + observaciones + "\n";
+
+}
+
+
+mensaje += "\n" + emoji(0x1F4CB) + " *PEDIDO*\n";
+
+
+carrito.forEach(item => {
+
+    total += item.precio * item.cantidad;
+
+    mensaje += 
+    emoji(0x1F539) +
+    " *" + item.cantidad + "x* " +
+    item.nombre + "\n";
+
+});
+
+
+mensaje += 
+"\n" +
+emoji(0x1F4B0) +
+" *TOTAL: $" +
+total.toLocaleString() +
+"*";
+
+
+const numero = "5493705056785";
+
+const params = new URLSearchParams();
+
+params.set("text", mensaje);
+
+const url = 
+"https://wa.me/" + numero + "?" + params.toString();
+
+console.log(mensaje);
+console.log(url);
+
+window.open(url, "_blank");
+
+    carrito.length = 0;
+
+    guardarCarrito();
+    renderCarrito();
+
+    document.getElementById('cliente').value = '';
+    document.getElementById('direccion').value = '';
+    document.getElementById('observaciones').value = '';
+
+}
+
+// =========================
+// FILTROS MENU
+// =========================
+
+
+const filtros = document.querySelectorAll('.filter');
+
+const categorias = document.querySelectorAll('.categoria');
+
+
+filtros.forEach(btn => {
+
+
+btn.addEventListener('click',()=>{
+
+
+filtros.forEach(b=>{
+
+b.classList.remove('active');
+
+});
+
+
+btn.classList.add('active');
+
+
+
+let filtro = btn.dataset.filter;
+
+
+
+categorias.forEach(cat=>{
+
+
+cat.classList.remove('active');
+
+
+
+if(cat.classList.contains(filtro)){
+
+
+cat.classList.add('active');
+
+
+}
+
+
+});
+
+
+});
+
+
+});
+
+toggleDireccion();
+
+renderCarrito();
+
+const btnTop = document.getElementById('btnTop');
+
+if(btnTop){
+
+    window.addEventListener('scroll',()=>{
+
+        btnTop.classList.toggle(
+            'show',
+            window.scrollY > 400
+        );
+
+    });
+
+    btnTop.addEventListener('click',()=>{
+
+        const filtros = document.querySelector('.menu-filters');
+
+        window.scrollTo({
+
+            top: filtros.offsetTop - 90, // Ajustá este valor
+
+            behavior:'smooth'
+
+        });
+
+    });
+
+}
+
+</script>
+
+</body>
+
+
+
+</html>
