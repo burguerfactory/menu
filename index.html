@@ -1907,50 +1907,47 @@ function emoji(codigo){
 }
 
 
-let mensaje = 
-emoji(0x1F354) + " *BURGER FACTORY*\n\n" +
-emoji(0x1F464) + " Cliente: " + cliente + "\n" +
-emoji(0x1F4B3) + " Pago: " + pago + "\n" +
-emoji(0x1F69A) + " Entrega: " + entrega + "\n";
+let mensaje =
+"══════════════════════\n" +
+"*BURGER FACTORY*\n" +
+"══════════════════════\n\n" +
 
+"CLIENTE: " + cliente + "\n" +
+"PAGO: " + pago + "\n" +
+"ENTREGA: " + entrega + "\n";
 
-if (entrega === 'Envío') {
-
-    mensaje += emoji(0x1F4CD) + 
-    " Dirección: " + direccion + "\n";
-
+if (entrega === "Envío") {
+    mensaje +=
+    "DIRECCIÓN: " + direccion + "\n";
 }
 
-
-if (observaciones !== '') {
-
-    mensaje += emoji(0x1F4DD) + 
-    " Observaciones: " + observaciones + "\n";
-
+if (observaciones !== "") {
+    mensaje +=
+    "OBSERVACIONES: " + observaciones + "\n";
 }
 
-
-mensaje += "\n" + emoji(0x1F4CB) + " *PEDIDO*\n";
-
+mensaje +=
+"\n──────────────────────\n" +
+"*PEDIDO*\n" +
+"──────────────────────\n";
 
 carrito.forEach(item => {
 
     total += item.precio * item.cantidad;
 
-    mensaje += 
-    emoji(0x1F539) +
-    " *" + item.cantidad + "x* " +
+    mensaje +=
+    "• " +
+    item.cantidad + "x " +
     item.nombre + "\n";
 
 });
 
-
-mensaje += 
-"\n" +
-emoji(0x1F4B0) +
-" *TOTAL: $" +
+mensaje +=
+"\n──────────────────────\n" +
+"*TOTAL: $" +
 total.toLocaleString() +
-"*";
+"*\n" +
+"══════════════════════";
 
 
 const numero = "5493705056785";
