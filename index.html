@@ -1462,36 +1462,34 @@ AGREGAR
 
 
 
-        <div id="direccionBox">
+		<div id="direccionBox">
 
-            <input
-            type="text"
-            id="direccion"
-            placeholder="Dirección">
+		    <p class="aviso-envio">
+		        El costo del envío no está incluido en el total.
+		    </p>
 
-            <div class="ubicacion-box">
+		    <input
+		        type="text"
+		        id="direccion"
+		        placeholder="Dirección"
+		    >
 
-                <button
-                type="button"
-                id="btnUbicacion"
-                class="btn-ubicacion"
-                onclick="obtenerUbicacion()">
+		    <button
+		        type="button"
+		        id="btnUbicacion"
+		        class="btn-ubicacion"
+		        onclick="obtenerUbicacion()">
 
-                    <i class="bi bi-geo-alt-fill"></i>
-                    COMPARTIR MI UBICACIÓN
+		        📍 COMPARTIR MI UBICACIÓN
 
-                </button>
+		    </button>
 
-                <div
-                id="ubicacionEstado"
-                class="ubicacion-estado"
-                aria-live="polite">
-                </div>
+		    <div
+		        id="ubicacionEstado"
+		        class="ubicacion-estado">
+		    </div>
 
-            </div>
-
-        </div>
-
+		</div>
         <div class="obs-box">
 
 
@@ -1776,15 +1774,23 @@ document
     .getElementById('cartOverlay')
     .classList.add('active');
 
+    // Ocultar botón "subir"
+    document
+    .getElementById('btnTop')
+    .classList.remove('show');
+
 });
+
 
 document
 .getElementById('closeCart')
 .addEventListener('click',cerrarCarrito);
 
+
 document
 .getElementById('cartOverlay')
 .addEventListener('click',cerrarCarrito);
+
 
 function cerrarCarrito(){
 
@@ -1796,8 +1802,20 @@ function cerrarCarrito(){
     .getElementById('cartOverlay')
     .classList.remove('active');
 
-}
+    // Actualizar botón "subir"
+    const btnTop =
+        document.getElementById('btnTop');
 
+    if(btnTop){
+
+        btnTop.classList.toggle(
+            'show',
+            window.scrollY > 400
+        );
+
+    }
+
+}
 function limpiarCarrito(){
 
     if(!confirm('¿Vaciar todo el carrito?')){
@@ -2037,24 +2055,26 @@ function emoji(codigo){
 }
 
 
-let mensaje = 
+let mensaje =
 emoji(0x1F354) + " *BURGER FACTORY*\n\n" +
+
+"══════════════════════\n\n" +
+
 emoji(0x1F464) + " Cliente: " + cliente + "\n" +
 emoji(0x1F4B3) + " Pago: " + pago + "\n" +
 emoji(0x1F69A) + " Entrega: " + entrega + "\n";
 
-
 if (entrega === 'Envío') {
 
     mensaje +=
-        'DIRECCIÓN: ' +
-        direccion +
-        "\n";
+        emoji(0x1F4CD) +
+        " Dirección: " + direccion + "\n";
 
-    if(ubicacionMaps !== ''){
+    if (ubicacionMaps !== "") {
 
         mensaje +=
-            'UBICACIÓN: ' +
+            emoji(0x1F4CD) +
+            " Ubicación: " +
             ubicacionMaps +
             "\n";
 
@@ -2064,33 +2084,37 @@ if (entrega === 'Envío') {
 
 if (observaciones !== '') {
 
-    mensaje += emoji(0x1F4DD) + 
-    " Observaciones: " + observaciones + "\n";
+    mensaje +=
+        emoji(0x1F4DD) +
+        " Observaciones: " +
+        observaciones +
+        "\n";
 
 }
 
-
-mensaje += "\n" + emoji(0x1F4CB) + " *PEDIDO*\n";
-
+mensaje +=
+    "\n══════════════════════\n\n" +
+    emoji(0x1F4CB) +
+    " *PEDIDO*\n";
 
 carrito.forEach(item => {
 
     total += item.precio * item.cantidad;
 
-    mensaje += 
-    emoji(0x1F539) +
-    " *" + item.cantidad + "x* " +
-    item.nombre + "\n";
+    mensaje +=
+        emoji(0x1F539) +
+        " *" + item.cantidad + "x* " +
+        item.nombre +
+        "\n";
 
 });
 
-
-mensaje += 
-"\n" +
-emoji(0x1F4B0) +
-" *TOTAL: $" +
-total.toLocaleString() +
-"*";
+mensaje +=
+    "\n══════════════════════\n\n" +
+    emoji(0x1F4B0) +
+    " *TOTAL: $" +
+    total.toLocaleString() +
+    "*";
 
 
 const numero = "5493705056785";
