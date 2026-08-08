@@ -1046,7 +1046,23 @@ display:block;
 .ubicacion-estado.ok{color:#2e7d32;}
 .ubicacion-estado.error{color:#b3261e;}
 
+/* =========================
+   AVISO ENVÍO
+========================= */
 
+.aviso-envio{
+
+    margin: 0 0 10px;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    text-align: center;
+
+    color: #777;
+
+}
 
 
 /* OBSERVACIONES */
