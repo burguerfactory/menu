@@ -1774,7 +1774,6 @@ document
     .getElementById('cartOverlay')
     .classList.add('active');
 
-    // Ocultar botón "subir"
     document
     .getElementById('btnTop')
     .classList.remove('show');
@@ -1802,7 +1801,6 @@ function cerrarCarrito(){
     .getElementById('cartOverlay')
     .classList.remove('active');
 
-    // Actualizar botón "subir"
     const btnTop =
         document.getElementById('btnTop');
 
@@ -1816,6 +1814,7 @@ function cerrarCarrito(){
     }
 
 }
+
 function limpiarCarrito(){
 
     if(!confirm('¿Vaciar todo el carrito?')){
