@@ -1001,7 +1001,50 @@ display:block;
 }
 
 
-
+.ubicacion-box{
+    margin-top:10px;
+}
+.btn-ubicacion{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 16px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    background:#fff;
+    color:#222;
+    font-family:inherit;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s ease;
+}
+.btn-ubicacion:hover{
+    background:#f5f5f5;
+    transform:translateY(-1px);
+}
+.btn-ubicacion:disabled{
+    opacity:.65;
+    cursor:wait;
+    transform:none;
+}
+.btn-ubicacion.ok{
+    border-color:#2e7d32;
+    color:#2e7d32;
+    background:#f3faf3;
+}
+.ubicacion-estado{
+    margin-top:7px;
+    min-height:16px;
+    font-size:12px;
+    font-weight:600;
+    line-height:1.35;
+    text-align:center;
+}
+.ubicacion-estado.ok{color:#2e7d32;}
+.ubicacion-estado.error{color:#b3261e;}
 
 
 

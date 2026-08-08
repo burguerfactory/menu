@@ -1464,18 +1464,33 @@ AGREGAR
 
         <div id="direccionBox">
 
-
             <input
             type="text"
             id="direccion"
             placeholder="Dirección">
 
+            <div class="ubicacion-box">
+
+                <button
+                type="button"
+                id="btnUbicacion"
+                class="btn-ubicacion"
+                onclick="obtenerUbicacion()">
+
+                    <i class="bi bi-geo-alt-fill"></i>
+                    COMPARTIR MI UBICACIÓN
+
+                </button>
+
+                <div
+                id="ubicacionEstado"
+                class="ubicacion-estado"
+                aria-live="polite">
+                </div>
+
+            </div>
 
         </div>
-
-
-
-
 
         <div class="obs-box">
 
@@ -1814,6 +1829,8 @@ function toggleDireccion(){
 
         document.getElementById('direccion').value = '';
 
+        limpiarUbicacion();
+
     }
 
 }
@@ -1822,6 +1839,119 @@ entregaSelect.addEventListener(
     'change',
     toggleDireccion
 );
+
+let ubicacionMaps = '';
+
+function limpiarUbicacion(){
+
+    ubicacionMaps = '';
+
+    const boton = document.getElementById('btnUbicacion');
+    const estado = document.getElementById('ubicacionEstado');
+
+    if(boton){
+
+        boton.disabled = false;
+        boton.classList.remove('ok');
+        boton.innerHTML =
+            '<i class="bi bi-geo-alt-fill"></i> COMPARTIR MI UBICACIÓN';
+
+    }
+
+    if(estado){
+
+        estado.textContent = '';
+        estado.className = 'ubicacion-estado';
+
+    }
+
+}
+
+function obtenerUbicacion(){
+
+    const boton = document.getElementById('btnUbicacion');
+    const estado = document.getElementById('ubicacionEstado');
+
+    if(!navigator.geolocation){
+
+        estado.textContent =
+            'Tu navegador no permite obtener la ubicación.';
+        estado.className = 'ubicacion-estado error';
+        return;
+
+    }
+
+    boton.disabled = true;
+    boton.classList.remove('ok');
+    boton.innerHTML =
+        '<i class="bi bi-hourglass-split"></i> OBTENIENDO UBICACIÓN...';
+
+    estado.textContent =
+        'Esperando permiso de ubicación...';
+    estado.className = 'ubicacion-estado';
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position){
+
+            const latitud = position.coords.latitude;
+            const longitud = position.coords.longitude;
+
+            ubicacionMaps =
+                'https://www.google.com/maps/search/?api=1&query=' +
+                encodeURIComponent(latitud + ',' + longitud);
+
+            boton.disabled = false;
+            boton.classList.add('ok');
+            boton.innerHTML =
+                '<i class="bi bi-check-circle-fill"></i> UBICACIÓN AGREGADA';
+
+            estado.textContent =
+                'Ubicación lista para enviar con el pedido.';
+            estado.className = 'ubicacion-estado ok';
+
+        },
+
+        function(error){
+
+            limpiarUbicacion();
+
+            switch(error.code){
+
+                case error.PERMISSION_DENIED:
+                    estado.textContent =
+                        'Permiso de ubicación rechazado. Podés ingresar la dirección manualmente.';
+                    break;
+
+                case error.POSITION_UNAVAILABLE:
+                    estado.textContent =
+                        'No se pudo obtener la ubicación. Verificá el GPS y volvé a intentarlo.';
+                    break;
+
+                case error.TIMEOUT:
+                    estado.textContent =
+                        'La ubicación tardó demasiado. Volvé a intentarlo.';
+                    break;
+
+                default:
+                    estado.textContent =
+                        'No se pudo obtener la ubicación. Podés ingresar la dirección manualmente.';
+
+            }
+
+            estado.className = 'ubicacion-estado error';
+
+        },
+
+        {
+            enableHighAccuracy:true,
+            timeout:15000,
+            maximumAge:0
+        }
+
+    );
+
+}
 
 const emojis = {
     burger: String.fromCodePoint(0x1F354),
@@ -1907,47 +2037,60 @@ function emoji(codigo){
 }
 
 
-let mensaje =
-"══════════════════════\n" +
-"*BURGER FACTORY*\n" +
-"══════════════════════\n\n" +
+let mensaje = 
+emoji(0x1F354) + " *BURGER FACTORY*\n\n" +
+emoji(0x1F464) + " Cliente: " + cliente + "\n" +
+emoji(0x1F4B3) + " Pago: " + pago + "\n" +
+emoji(0x1F69A) + " Entrega: " + entrega + "\n";
 
-"CLIENTE: " + cliente + "\n" +
-"PAGO: " + pago + "\n" +
-"ENTREGA: " + entrega + "\n";
 
-if (entrega === "Envío") {
+if (entrega === 'Envío') {
+
     mensaje +=
-    "DIRECCIÓN: " + direccion + "\n";
+        'DIRECCIÓN: ' +
+        direccion +
+        "\n";
+
+    if(ubicacionMaps !== ''){
+
+        mensaje +=
+            'UBICACIÓN: ' +
+            ubicacionMaps +
+            "\n";
+
+    }
+
 }
 
-if (observaciones !== "") {
-    mensaje +=
-    "OBSERVACIONES: " + observaciones + "\n";
+if (observaciones !== '') {
+
+    mensaje += emoji(0x1F4DD) + 
+    " Observaciones: " + observaciones + "\n";
+
 }
 
-mensaje +=
-"\n──────────────────────\n" +
-"*PEDIDO*\n" +
-"──────────────────────\n";
+
+mensaje += "\n" + emoji(0x1F4CB) + " *PEDIDO*\n";
+
 
 carrito.forEach(item => {
 
     total += item.precio * item.cantidad;
 
-    mensaje +=
-    "• " +
-    item.cantidad + "x " +
+    mensaje += 
+    emoji(0x1F539) +
+    " *" + item.cantidad + "x* " +
     item.nombre + "\n";
 
 });
 
-mensaje +=
-"\n──────────────────────\n" +
-"*TOTAL: $" +
+
+mensaje += 
+"\n" +
+emoji(0x1F4B0) +
+" *TOTAL: $" +
 total.toLocaleString() +
-"*\n" +
-"══════════════════════";
+"*";
 
 
 const numero = "5493705056785";
@@ -1972,6 +2115,8 @@ window.open(url, "_blank");
     document.getElementById('cliente').value = '';
     document.getElementById('direccion').value = '';
     document.getElementById('observaciones').value = '';
+
+    limpiarUbicacion();
 
 }
 
