@@ -1462,35 +1462,34 @@ AGREGAR
 
 
 
-        <div id="direccionBox">
+<div id="direccionBox">
 
-            <input
-            type="text"
-            id="direccion"
-            placeholder="Dirección">
+    <p class="aviso-envio">
+        El costo del envío no está incluido en el total.
+    </p>
 
-            <div class="ubicacion-box">
+    <input
+        type="text"
+        id="direccion"
+        placeholder="Dirección"
+    >
 
-                <button
-                type="button"
-                id="btnUbicacion"
-                class="btn-ubicacion"
-                onclick="obtenerUbicacion()">
+    <button
+        type="button"
+        id="btnUbicacion"
+        class="btn-ubicacion"
+        onclick="obtenerUbicacion()">
 
-                    <i class="bi bi-geo-alt-fill"></i>
-                    COMPARTIR MI UBICACIÓN
+        📍 COMPARTIR MI UBICACIÓN
 
-                </button>
+    </button>
 
-                <div
-                id="ubicacionEstado"
-                class="ubicacion-estado"
-                aria-live="polite">
-                </div>
+    <div
+        id="ubicacionEstado"
+        class="ubicacion-estado">
+    </div>
 
-            </div>
-
-        </div>
+</div>
 
         <div class="obs-box">
 
@@ -2038,7 +2037,9 @@ function emoji(codigo){
 
 
 let mensaje = 
+════════════════════════════════════════════
 emoji(0x1F354) + " *BURGER FACTORY*\n\n" +
+════════════════════════════════════════════
 emoji(0x1F464) + " Cliente: " + cliente + "\n" +
 emoji(0x1F4B3) + " Pago: " + pago + "\n" +
 emoji(0x1F69A) + " Entrega: " + entrega + "\n";
@@ -2061,7 +2062,7 @@ if (entrega === 'Envío') {
     }
 
 }
-
+════════════════════════════════════════════
 if (observaciones !== '') {
 
     mensaje += emoji(0x1F4DD) + 
@@ -2084,14 +2085,14 @@ carrito.forEach(item => {
 
 });
 
-
+════════════════════════════════════════════
 mensaje += 
 "\n" +
 emoji(0x1F4B0) +
 " *TOTAL: $" +
 total.toLocaleString() +
 "*";
-
+════════════════════════════════════════════
 
 const numero = "5493705056785";
 
